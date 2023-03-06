@@ -24,7 +24,7 @@ const Dictionary: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="mt-12 flex flex-col items-center justify-center">
       <SearchBar onSubmit={onSubmit} />
       {state.dataReady && <DictionaryData data={state.data} />}
       <div className="text-white">{state.error}</div>

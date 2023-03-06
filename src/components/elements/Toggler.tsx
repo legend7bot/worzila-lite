@@ -14,7 +14,7 @@ const Toggler: React.FC<TogglerProps> = (props) => {
     <div
       className={`flex h-[50px] w-20 cursor-pointer place-self-center rounded-[25px] p-[0.3125rem] ${
         darkMode ? 'justify-end' : 'justify-start'
-      } bg-gray-600`}
+      } bg-gray-400 dark:bg-gray-600`}
       onClick={() => setDarkMode((prev) => !prev)}>
       <motion.div
         className="flex h-10 w-10 items-center justify-center rounded-[20px] bg-[#f5f5f5] text-2xl"
@@ -24,7 +24,7 @@ const Toggler: React.FC<TogglerProps> = (props) => {
           stiffness: 700,
           damping: 30,
         }}>
-        {darkMode ? <BsMoonStars /> : <BsSunFill />}
+        {darkMode ? <BsMoonStars fill="#939695" /> : <BsSunFill fill="#FFE87C" />}
       </motion.div>
     </div>
   );

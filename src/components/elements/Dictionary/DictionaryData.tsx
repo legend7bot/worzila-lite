@@ -7,10 +7,12 @@ interface DictionaryDataProps {
 
 const DictionaryData: React.FC<DictionaryDataProps> = ({ data }) => {
   return (
-    <div>
+    <div className="flex flex-col gap-4 ">
       {data.map((item, index) => {
         return (
-          <div key={index}>
+          <div
+            className="bg-slate-500"
+            key={index}>
             <div className="text-white">{item.word}</div>
             <DictionaryPhonetic phonetics={item.phonetics} />
           </div>

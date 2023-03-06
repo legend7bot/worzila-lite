@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import AppBar from './components/AppBar';
 import Dictionary from './components/Dictionary';
 
+//Light-Pallete: https://www.color-hex.com/color-palette/65620
+//Dark-Pallete: https://colorhunt.co/palette/1a1a2e16213e0f3460e94560
+
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>();
   const [font, setFont] = useState<'serif' | 'sans' | 'mono'>('sans');
@@ -32,7 +35,7 @@ const App: React.FC = () => {
   return (
     <div
       className={`${
-        darkMode ? 'dark bg-slate-800' : 'bg-[#f5f5f5]'
+        darkMode ? 'dark bg-[#16213E]' : 'bg-[#ffffee]'
       } h-[100vh] w-[100vw] fnt-${font}`}>
       <AppBar
         darkMode={darkMode}
@@ -40,7 +43,6 @@ const App: React.FC = () => {
         font={font}
         setFont={setFont}
       />
-      <h1 className="dark:bg-slate-800 dark:text-white">Hello World</h1>
       <Dictionary />
     </div>
   );

@@ -3,6 +3,7 @@ import React, { Dispatch, SetStateAction } from 'react';
 import FontSelector from './elements/FontSelector';
 import Toggler from './elements/Toggler';
 
+
 interface AppBarProps {
   darkMode: boolean;
   setDarkMode: Dispatch<SetStateAction<boolean | undefined>>;
@@ -14,7 +15,7 @@ const AppBar: React.FC<AppBarProps> = (props) => {
   const { darkMode, setDarkMode, font, setFont } = props;
 
   return (
-    <div className="flex z-[999] h-20 w-[100vw] items-center justify-around bg-slate-200 dark:bg-slate-900">
+    <div className="flex z-[999] h-20 w-[100vw] items-center justify-around bg-[#eeeedd] dark:bg-[#1A1A2E]">
       <Toggler
         darkMode={darkMode}
         setDarkMode={setDarkMode}
