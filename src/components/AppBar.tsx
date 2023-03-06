@@ -14,7 +14,7 @@ const AppBar: React.FC<AppBarProps> = (props) => {
   const { darkMode, setDarkMode, font, setFont } = props;
 
   return (
-    <div className="z-[999] flex h-20 w-[100vw] items-center justify-around rounded-full bg-[#eeeedd] dark:bg-[#1A1A2E]">
+    <div className="z-[999] flex h-20 w-auto items-center justify-around rounded-full bg-[#eeeedd] dark:bg-[#1A1A2E]">
       <Toggler
         darkMode={darkMode}
         setDarkMode={setDarkMode}
