@@ -14,10 +14,10 @@ const App: React.FC = () => {
     const localFont = localStorage.getItem('font');
     if (localDarkMode) {
       setDarkMode(JSON.parse(localDarkMode));
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setDarkMode(true);
     } else {
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setDarkMode(true);
-      }
+      setDarkMode(false);
     }
     if (localFont) {
       setFont(localFont as 'serif' | 'sans' | 'mono');
