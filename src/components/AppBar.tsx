@@ -21,7 +21,6 @@ const AppBar: React.FC<AppBarProps> = (props) => {
       setOpacity(false);
     }
   };
-  console.log(opacity);
   window.addEventListener('scroll', changeNavbarColor);
 
   useEffect(() => {
