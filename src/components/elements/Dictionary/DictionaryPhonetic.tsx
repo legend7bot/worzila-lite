@@ -1,9 +1,21 @@
 import React, { useEffect } from 'react';
 
+import { FaPlayCircle } from 'react-icons/fa';
+
 const DictionaryPhonetic: React.FC<{ phonetics: any }> = ({ phonetics }) => {
   const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
 
   const phonetic = phonetics.find((item: any) => item.audio !== '');
+
+  if (!phonetic)
+    return (
+      <button
+        disabled
+        className="rounded-full bg-[#EBEBE4] text-5xl text-slate-600">
+        <FaPlayCircle />
+      </button>
+    );
+
   const audio = new Audio(phonetic.audio);
 
   const playAudio = () => {
@@ -23,16 +35,15 @@ const DictionaryPhonetic: React.FC<{ phonetics: any }> = ({ phonetics }) => {
     };
   }, [audio]);
 
-  if (!phonetic) return <div className="text-white">No audio found</div>;
-
   return (
     <div>
-      <div className="text-white">{phonetic.text}</div>
-      {phonetic.audio !== '' && (
+      {phonetic?.audio !== '' && (
         <button
           onClick={playAudio}
-          className={`${isPlaying ? 'bg-indigo-400' : 'bg-slate-500'}`}>
-          Play Audio
+          className={`${
+            isPlaying ? 'bg-indigo-400 dark:bg-indigo-200' : 'bg-green-700 dark:bg-green-400'
+          } rounded-full text-5xl text-[#ffffee] dark:text-[#1A1A2E]`}>
+          <FaPlayCircle />
         </button>
       )}
     </div>
