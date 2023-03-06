@@ -12,13 +12,11 @@ const DictionaryPhonetic: React.FC<{ phonetics: any }> = ({ phonetics }) => {
   };
 
   useEffect(() => {
-    console.log('useEffect');
     audio?.addEventListener('ended', () => {
       setIsPlaying(false);
     });
 
     return () => {
-      console.log('return');
       audio?.removeEventListener('ended', () => {
         setIsPlaying(false);
       });

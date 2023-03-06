@@ -21,7 +21,6 @@ const FontSelector: React.FC<FontSelectorProps> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleFontChange = (e: React.MouseEvent<HTMLLIElement>) => {
-    console.log('font:- ', e.currentTarget.id);
     setFont(e.currentTarget.id as 'serif' | 'sans' | 'mono');
     setIsOpen(false);
   };
@@ -32,7 +31,7 @@ const FontSelector: React.FC<FontSelectorProps> = (props) => {
       animate={isOpen ? 'open' : 'closed'}
       className="z-[999] h-10 w-28 drop-shadow-[1px_1px_1px_rgba(71,0,179,1)]">
       <motion.button
-        className="mb-2 flex w-full cursor-pointer items-center justify-between rounded-xl bg-gray-100 px-3 py-2 text-left text-lg font-bold capitalize text-purple-700"
+        className="mb-2 flex w-full cursor-pointer items-center justify-between rounded-xl bg-gray-100 px-3 py-2 text-left text-lg font-bold capitalize text-purple-700 dark:bg-[#0F3460] dark:text-[#eeeeee]"
         whileTap={{ scale: 0.97 }}
         onClick={() => setIsOpen(!isOpen)}>
         {font}
@@ -52,7 +51,7 @@ const FontSelector: React.FC<FontSelectorProps> = (props) => {
         </motion.div>
       </motion.button>
       <motion.ul
-        className="m-0 flex list-none flex-col gap-2 bg-gray-100 p-2"
+        className="m-0 flex list-none flex-col gap-2 bg-gray-100 p-2 dark:bg-[#0F3460]"
         variants={{
           open: {
             clipPath: 'inset(0% 0% 0% 0% round 10px)',
@@ -79,7 +78,7 @@ const FontSelector: React.FC<FontSelectorProps> = (props) => {
             key={item}
             id={item}
             onClick={handleFontChange}
-            className="m-0 block cursor-pointer list-none p-2 capitalize text-purple-700"
+            className="m-0 block cursor-pointer list-none p-2 capitalize text-purple-700 dark:text-[#eeeeee]"
             variants={itemVariants}>
             {item}
           </motion.li>
