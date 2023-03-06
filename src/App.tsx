@@ -8,6 +8,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const localDarkMode = localStorage.getItem('darkMode');
+    const localFont = localStorage.getItem('font');
     if (localDarkMode) {
       setDarkMode(JSON.parse(localDarkMode));
     } else {
@@ -15,12 +16,16 @@ const App: React.FC = () => {
         setDarkMode(true);
       }
     }
+    if (localFont) {
+      setFont(localFont as 'serif' | 'sans' | 'mono');
+    }
   }, []);
 
   useEffect(() => {
     if (darkMode === undefined) return;
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
-  }, [darkMode]);
+    localStorage.setItem('font', font);
+  }, [darkMode, font]);
 
   if (darkMode === undefined) return <div>Loading...</div>;
 
@@ -28,7 +33,7 @@ const App: React.FC = () => {
     <div
       className={`${
         darkMode ? 'dark bg-slate-800' : 'bg-[#f5f5f5]'
-      } h-[100vh] w-[100vw] font-${font}`}>
+      } h-[100vh] w-[100vw] fnt-${font}`}>
       <AppBar
         darkMode={darkMode}
         setDarkMode={setDarkMode}

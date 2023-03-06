@@ -21,6 +21,7 @@ const FontSelector: React.FC<FontSelectorProps> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleFontChange = (e: React.MouseEvent<HTMLLIElement>) => {
+    console.log('font:- ', e.currentTarget.id);
     setFont(e.currentTarget.id as 'serif' | 'sans' | 'mono');
     setIsOpen(false);
   };
@@ -29,7 +30,7 @@ const FontSelector: React.FC<FontSelectorProps> = (props) => {
     <motion.nav
       initial={false}
       animate={isOpen ? 'open' : 'closed'}
-      className="w-28 h-10 drop-shadow-[1px_1px_1px_rgba(71,0,179,1)]">
+      className="z-[999] h-10 w-28 drop-shadow-[1px_1px_1px_rgba(71,0,179,1)]">
       <motion.button
         className="mb-2 flex w-full cursor-pointer items-center justify-between rounded-xl bg-gray-100 px-3 py-2 text-left text-lg font-bold capitalize text-purple-700"
         whileTap={{ scale: 0.97 }}
