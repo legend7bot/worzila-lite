@@ -1,1 +1,2 @@
-# worzila-lite
+# Deployment
+https://worzila-lite.netlify.app/
