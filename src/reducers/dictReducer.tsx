@@ -1,3 +1,5 @@
+import { initialData } from '../assets/initialData';
+
 interface DictState {
   data: any[];
   loading: boolean;
@@ -5,14 +7,19 @@ interface DictState {
   dataReady: boolean;
 }
 
+interface DictAction {
+  type: 'FETCH_DICT_REQUEST' | 'FETCH_DICT_SUCCESS' | 'FETCH_DICT_FAILURE';
+  payload?: any;
+}
+
 export const initialState: DictState = {
-  data: [],
+  data: initialData,
   loading: false,
   error: '',
-  dataReady: false,
+  dataReady: true,
 };
 
-export const dictReducer = (state: DictState = initialState, action: any) => {
+export const dictReducer = (state: DictState = initialState, action: DictAction) => {
   switch (action.type) {
     case 'FETCH_DICT_REQUEST':
       return {

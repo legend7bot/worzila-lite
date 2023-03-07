@@ -11,7 +11,7 @@ const DictionaryPhonetic: React.FC<{ phonetics: any }> = ({ phonetics }) => {
     return (
       <button
         disabled
-        className="rounded-full bg-[#EBEBE4] text-5xl text-slate-600">
+        className="h-fit w-fit rounded-full bg-[#EBEBE4] text-5xl text-slate-600">
         <FaPlayCircle />
       </button>
     );

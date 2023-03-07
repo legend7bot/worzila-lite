@@ -13,7 +13,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
   };
   return (
     <div>
-      <div className="relative flex h-16 w-[90vw] items-center justify-evenly rounded-full bg-[#eeeeee] p-1 dark:bg-[#0F3460] sm:w-[80vw] md:w-[50rem]">
+      <div className="relative flex h-16 w-[90vw] items-center justify-evenly rounded-full bg-[#eeeeee] p-1 dark:bg-[#0F3460] lg:w-[50rem]">
         <form
           className="w-full rounded-full"
           onSubmit={(e) => {

@@ -37,7 +37,7 @@ const App: React.FC = () => {
     <div
       className={`${
         darkMode ? 'dark bg-[#16213E]' : 'bg-[#ffffee]'
-      } h-full w-full fnt-${font} min-h-[100vh]`}>
+      } h-full w-full fnt-${font} min-h-[100vh] overflow-x-hidden`}>
       <AppBar
         darkMode={darkMode}
         setDarkMode={setDarkMode}

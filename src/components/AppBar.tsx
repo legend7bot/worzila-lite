@@ -32,9 +32,9 @@ const AppBar: React.FC<AppBarProps> = (props) => {
   return (
     <div className="flex h-20 w-auto">
       <div
-        className={`fixed top-0 z-[999] flex h-20 w-[100vw] items-center justify-around rounded-full ${
-          opacity ? 'bg-[#eeeedd]/70' : 'bg-[#eeeedd]/100'
-        } ${opacity ? 'dark:bg-[#1A1A2E]/70' : 'dark:bg-[#1A1A2E]/100'}`}>
+        className={`fixed top-0 z-[999] flex h-20 w-[100vw] items-center justify-around ${
+          opacity ? 'bg-[#eeeedd]/60' : 'bg-[#eeeedd]/100'
+        } ${opacity ? 'dark:bg-[#1A1A2E]/60' : 'dark:bg-[#1A1A2E]/100'}`}>
         <Toggler
           darkMode={darkMode}
           setDarkMode={setDarkMode}
