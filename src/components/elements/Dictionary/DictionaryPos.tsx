@@ -26,13 +26,13 @@ const DictionaryPos: React.FC<DictionaryPosProps> = (props) => {
           );
         })}
       </ul>
-      <p>
+      <p className="cmasep my-1">
         Synonyms:{' '}
         {meaning.synonyms.map((synonym: any, index: any) => (
           <span key={index}>{synonym}</span>
         ))}
       </p>
-      <p>
+      <p className="cmasep my-1">
         Antonyms:{' '}
         {meaning.antonyms.map((antonym: any, index: any) => (
           <span key={index}>{antonym}</span>

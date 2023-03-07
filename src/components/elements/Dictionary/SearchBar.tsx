@@ -17,6 +17,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
         <form
           className="w-full rounded-full"
           onSubmit={(e) => {
+            e.preventDefault();
             onSubmit(e, keyword);
           }}>
           <input
