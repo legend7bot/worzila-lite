@@ -54,6 +54,10 @@ const Dictionary: React.FC = () => {
   const [state, dispatch] = useReducer(dictReducer, initialState);
 
   const onSubmit = (e: any, word: string) => {
+    if (word === '') {
+      dispatch({ type: 'FETCH_DICT_FAILURE', payload: 'Please enter a word' });
+      return;
+    }
     dispatch({ type: 'FETCH_DICT_REQUEST' });
     e.preventDefault();
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
