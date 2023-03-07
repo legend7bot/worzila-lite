@@ -5,51 +5,6 @@ import SearchBar from './elements/Dictionary/SearchBar';
 import DictionaryData from './elements/Dictionary/DictionaryData';
 import { Variants, motion } from 'framer-motion';
 
-const LoadingDot = {
-  display: 'block',
-  width: '2rem',
-  height: '2rem',
-  backgroundColor: 'black',
-  borderRadius: '50%',
-};
-
-const LoadingContainer = {
-  width: '10rem',
-  height: '5rem',
-  display: 'flex',
-  justifyContent: 'space-around',
-};
-
-const ContainerVariants: Variants = {
-  initial: {
-    transition: {
-      repeat: Infinity,
-      staggerChildren: 0.2,
-    },
-  },
-  animate: {
-    transition: {
-      repeat: Infinity,
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const DotVariants: Variants = {
-  initial: {
-    y: '0%',
-  },
-  animate: {
-    y: '100%',
-  },
-};
-
-const DotTransition = {
-  duration: 0.5,
-  yoyo: Infinity,
-  ease: 'easeInOut',
-};
-
 const Dictionary: React.FC = () => {
   const [state, dispatch] = useReducer(dictReducer, initialState);
 
