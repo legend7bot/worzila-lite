@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 
 import { dictReducer, initialState } from '../reducers/dictReducer';
 import SearchBar from './elements/Dictionary/SearchBar';
@@ -8,14 +8,24 @@ import { Variants, motion } from 'framer-motion';
 const Dictionary: React.FC = () => {
   const [state, dispatch] = useReducer(dictReducer, initialState);
 
+  //NOTE: For controlling the API request.
+  let controller: AbortController;
+
   const onSubmit = (e: any, word: string) => {
+    e.preventDefault();
+    //NOTE: This will prevent the user from entering an empty string.
     if (word === '') {
       dispatch({ type: 'FETCH_DICT_FAILURE', payload: 'Please enter a word' });
       return;
     }
+
+    //NOTE: For fetching the data from the API.
+
+    controller = new AbortController();
+    const signal = controller.signal; //NOTE: For controlling the request if component unmounts. If you're using axios, you can use the cancelToken instead.
+
     dispatch({ type: 'FETCH_DICT_REQUEST' });
-    e.preventDefault();
-    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`, { signal })
       .then((res) => {
         if (!res.ok) {
           dispatch({ type: 'FETCH_DICT_FAILURE', payload: "Can't find the word" });
@@ -32,6 +42,13 @@ const Dictionary: React.FC = () => {
         })
       );
   };
+
+  useEffect(() => {
+    return () => {
+      //NOTE: For aborting the request if component unmounts.
+      controller?.abort();
+    };
+  }, []);
 
   return (
     <div className="mt-12 flex flex-col items-center justify-center">

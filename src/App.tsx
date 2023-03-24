@@ -3,9 +3,6 @@ import AppBar from './components/AppBar';
 import Dictionary from './components/Dictionary';
 import Footer from './components/Footer';
 
-//Light-Pallete: https://www.color-hex.com/color-palette/65620
-//Dark-Pallete: https://colorhunt.co/palette/1a1a2e16213e0f3460e94560
-
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>();
   const [font, setFont] = useState<'serif' | 'sans' | 'mono'>('sans');
