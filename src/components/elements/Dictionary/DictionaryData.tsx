@@ -21,7 +21,7 @@ const DictionaryData: React.FC<DictionaryDataProps> = ({ data }) => {
             className="my-4 h-full w-full rounded-3xl"
             key={index}>
             {/* Word Introduction */}
-            <div className="mt-4 flex w-[90vw] flex-col overflow-hidden rounded-3xl bg-[#eeeeff] p-4 dark:bg-[#0F3460] dark:text-[#eeeeff] sm:w-[80vw] md:w-[40rem]">
+            <div className="mt-4 flex w-[90vw] flex-col overflow-hidden rounded-3xl bg-[#e8f3d6] p-4 dark:bg-[#0F3460] dark:text-[#eeeeff] sm:w-[80vw] md:w-[40rem]">
               <h1 className="mb-4 break-words text-5xl lg:text-7xl">{item.word}</h1>
               <div className="flex w-full">
                 <h2 className="mr-4 text-3xl">

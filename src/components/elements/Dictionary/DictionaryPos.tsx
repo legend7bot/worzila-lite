@@ -10,7 +10,7 @@ const DictionaryPos: React.FC<DictionaryPosProps> = (props) => {
   if (!meaning) return <div>Loading...</div>;
 
   return (
-    <div className="min-h-80 mt-4 flex w-[90vw] flex-col overflow-hidden rounded-3xl bg-[#eeeeff] py-8 px-16 dark:bg-[#0F3460] dark:text-[#eeeeff] sm:w-[80vw] md:w-[40rem]">
+    <div className="min-h-80 mt-4 flex w-[90vw] flex-col overflow-hidden rounded-3xl bg-[#e8f3d6] py-8 px-16 dark:bg-[#0F3460] dark:text-[#eeeeff] sm:w-[80vw] md:w-[40rem]">
       <h1 className="mb-4 break-words text-5xl font-bold sm:text-6xl lg:text-7xl">
         {meaning.partOfSpeech}
       </h1>

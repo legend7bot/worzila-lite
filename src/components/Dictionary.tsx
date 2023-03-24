@@ -59,7 +59,7 @@ const Dictionary: React.FC = () => {
 
       {/* Loading */}
       {state.loading && (
-        <div className="mt-4 flex w-[90vw] flex-col overflow-hidden rounded-3xl bg-[#eeeeff] p-4 dark:bg-[#0F3460] dark:text-[#eeeeff] sm:w-[80vw] md:w-[40rem]">
+        <div className="mt-4 flex w-[90vw] flex-col overflow-hidden rounded-3xl bg-[#e8f3d6] p-4 dark:bg-[#0F3460] dark:text-[#eeeeff] sm:w-[80vw] md:w-[40rem]">
           <div className="mb-4 flex break-words text-6xl md:text-7xl">Loading...</div>
         </div>
       )}

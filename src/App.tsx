@@ -33,7 +33,7 @@ const App: React.FC = () => {
   return (
     <div
       className={`${
-        darkMode ? 'dark bg-[#16213E]' : 'bg-[#ffffee]'
+        darkMode ? 'dark bg-[#16213E]' : 'bg-[#fefbe9]'
       } h-full w-full fnt-${font} min-h-[100vh] overflow-x-hidden`}>
       <AppBar
         darkMode={darkMode}
